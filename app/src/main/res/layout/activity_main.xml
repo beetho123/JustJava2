@@ -14,12 +14,14 @@
         tools:context="com.example.android.justjava.MainActivity">
 
         <EditText
-        android:id="@+id/album_description_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
-        android:hint="Name"
-        android:inputType="textMultiLine" />
+            android:id="@+id/name_of_customer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:hint="Name"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true"
+            android:inputType="text"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,7 +30,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="16dp"
             android:paddingTop="16dp"
-            android:text="TOPPIngs"
+            android:text="Toppings"
             android:textAllCaps="true" />
 
         <CheckBox
@@ -37,8 +39,8 @@
             android:layout_height="wrap_content"
             android:paddingLeft="24dp"
             android:text="Whipped cream"
-            android:textSize="16sp"
-            android:textAppearance="?android:textAppearanceMedium" />
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="16sp" />
 
         <CheckBox
             android:id="@+id/chocolate_checkbox"
@@ -46,8 +48,8 @@
             android:layout_height="wrap_content"
             android:paddingLeft="24dp"
             android:text="Chocolate"
-            android:textSize="16sp"
-            android:textAppearance="?android:textAppearanceMedium" />
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
