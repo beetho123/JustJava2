@@ -21,7 +21,7 @@
             android:hint="Name"
             android:descendantFocusability="beforeDescendants"
             android:focusableInTouchMode="true"
-            android:inputType="text"/>
+            android:inputType="textCapWords"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -80,7 +80,7 @@
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:paddingTop="8dp"
-                android:text="0"
+                android:text="1"
                 android:textAllCaps="true"
                 android:textColor="#000000"
                 android:textSize="16sp"/>
