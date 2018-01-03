@@ -9,6 +9,8 @@ package com.example.android.justjava;
  */
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -37,22 +39,32 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method is called when the order button is clicked.
      */
-    public void submitOrder(View view) {
-        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checbox);
-        boolean hasWhippedCreamCheckBox = whippedCreamCheckBox.isChecked();
+     public void submitOrder (View v) {
+         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checbox);
+         boolean hasWhippedCreamCheckBox = whippedCreamCheckBox.isChecked();
 
-              CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
-        boolean hasChocolate = chocolateCheckBox.isChecked();
+         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+         boolean hasChocolate = chocolateCheckBox.isChecked();
 
-        EditText nameOfCustomer = (EditText) findViewById(R.id.name_of_customer);
-        String nameOfOrder = nameOfCustomer.getText().toString();
+         EditText nameOfCustomer = (EditText) findViewById(R.id.name_of_customer);
+         String nameOfOrder = nameOfCustomer.getText().toString();
 
-        int price = calculatePrice(hasWhippedCreamCheckBox, hasChocolate);
+         int price = calculatePrice(hasWhippedCreamCheckBox, hasChocolate);
 
-        String priceMessage = createOrderSummary(price, hasWhippedCreamCheckBox, hasChocolate, nameOfOrder);
-        displayMessage(priceMessage);
+         String priceMessage = createOrderSummary(price, hasWhippedCreamCheckBox, hasChocolate, nameOfOrder);
+         /**
+         displayMessage(priceMessage); */
 
-    }
+         Intent intent = new Intent(Intent.ACTION_SENDTO);
+         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+         intent.putExtra(Intent.EXTRA_SUBJECT, "Order summary for " +nameOfOrder);
+         intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
+         if (intent.resolveActivity(getPackageManager()) != null) {
+             startActivity(intent);
+         }
+     }
+
+
 
     /**
      * Calculates the price of the order.
@@ -121,11 +133,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given text on the screen.
      */
-
+/**
     private void displayMessage(String message) {
         TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
         orderSummaryTextView.setText(message);
-    }
+    } */
 }
 
 

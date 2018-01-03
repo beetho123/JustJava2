@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
-            android:hint="Name"
+            android:hint="@string/Name"
             android:descendantFocusability="beforeDescendants"
             android:focusableInTouchMode="true"
             android:inputType="textCapWords"/>
@@ -30,7 +30,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="16dp"
             android:paddingTop="16dp"
-            android:text="Toppings"
+            android:text="@string/Toppings"
             android:textAllCaps="true" />
 
         <CheckBox
@@ -38,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="24dp"
-            android:text="Whipped cream"
+            android:text="@string/Whipped_cream"
             android:textAppearance="?android:textAppearanceMedium"
             android:textSize="16sp" />
 
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="24dp"
-            android:text="Chocolate"
+            android:text="@string/Chocolate"
             android:textAppearance="?android:textAppearanceMedium"
             android:textSize="16sp" />
 
@@ -58,7 +58,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="16dp"
             android:paddingTop="16dp"
-            android:text="quantity"
+            android:text="@string/quantity"
             android:textAllCaps="true" />
 
         <LinearLayout
@@ -100,7 +100,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="16dp"
             android:paddingTop="16dp"
-            android:text="order summary"
+            android:text="@string/order_summary"
             android:textAllCaps="true" />
 
         <TextView
@@ -119,8 +119,9 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:onClick="submitOrder"
-            android:text="order"/>
+            android:text="@string/order">
 
+        </Button>
 
     </LinearLayout>
 </ScrollView>
